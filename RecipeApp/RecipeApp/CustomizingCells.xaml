@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RecipeApp.CustomizingCells">
+
+    <ContentPage.Content>
+
+        <TableView Intent="Form" HasUnevenRows="True">
+            <TableView.Root>
+
+                <TableSection Title="Info">
+                    <EntryCell Label="Recipe Name: " Placeholder="Tap to Enter Name Here"
+                               HorizontalTextAlignment="End"/>
+                    <EntryCell Label="Prep Time: " Placeholder="Tap to Enter Prep Time"
+                               HorizontalTextAlignment="End"/>
+                    <EntryCell Label="Cook Time: " Placeholder="Tap to Enter Cook Time"
+                               HorizontalTextAlignment="End"/>
+                    <EntryCell Label="Number of Servings: " Placeholder="Tap to Number of Servings"
+                               HorizontalTextAlignment="End"/>
+                    <SwitchCell Text="Make Again?" On="True"/>
+                </TableSection>
+
+                <TableSection Title="Meal">
+                    <ViewCell>
+                        <ContentView Margin="15,10,10,10">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Meal Kind: "
+                                       VerticalOptions="Center"/>
+                                <Picker HorizontalOptions="FillAndExpand"
+                                        HeightRequest="45">
+                                    <Picker.Items>
+                                        <x:String>Breakfast</x:String>
+                                        <x:String>Lunch</x:String>
+                                        <x:String>Snack</x:String>
+                                        <x:String>Dinner</x:String>
+                                        <x:String>Others</x:String>
+                                    </Picker.Items>
+                                    <Picker.SelectedIndex>0</Picker.SelectedIndex>
+                                </Picker>
+                            </StackLayout>
+                        </ContentView>
+                    </ViewCell>
+                </TableSection>
+                
+                <!--<TableSection Title="Ingredients">
+                    <EntryCell Label="Ingredients: " Placeholder="Tap to Enter Ingredients"
+                               HorizontalTextAlignment="End"/>
+                </TableSection>-->
+
+                <!--<TableSection Title="Procedures">
+                    <EntryCell Label="Directions" Placeholder="Tap to Enter Directions"
+                               HorizontalTextAlignment="End"/>
+                </TableSection>-->
+
+                <TableSection 
+                    Title="Ingredients">
+
+                    <ViewCell>
+                        <ContentView HeightRequest="125"
+                                     Margin="15,10,10,10">
+                            <Editor Text="Tap to Edit Ingredients"/>
+                        </ContentView>
+                    </ViewCell>
+
+                </TableSection>
+
+                <TableSection 
+                    Title="Directions">
+                    <ViewCell>
+                        <ContentView HeightRequest="125"
+                                     Margin="15,10,10,10">
+                            <Editor Text="Tap to Edit Directions"/>
+                        </ContentView>
+                    </ViewCell>
+                </TableSection>
+
+            </TableView.Root>
+        </TableView>
+
+    </ContentPage.Content>
+
+</ContentPage>
